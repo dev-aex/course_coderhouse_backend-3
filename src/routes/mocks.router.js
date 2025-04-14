@@ -3,7 +3,7 @@ import mocksController from "../controllers/mocks.controller.js";
 
 const router = Router();
 
-router.post("/generatemockingdata/:users/:pets", async (req, res) => {
+router.post("/generatedata/:users/:pets", async (req, res) => {
   try {
     const { users, pets } = req.params;
 
