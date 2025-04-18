@@ -2,7 +2,8 @@
 
 ## Description
 
-AdoptMe is a Node.js and Express-powered platform designed to streamline pet adoptions through a robust REST API. It provides comprehensive tools for managing adoptable pets, user profiles, and adoption procedures.
+AdoptMe is a Node.js and Express-powered platform designed to streamline pet adoptions through a robust REST API.
+It provides comprehensive tools for managing adoptable pets, user profiles, and adoption procedures.
 
 # Getting Started
 

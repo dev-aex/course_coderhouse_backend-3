@@ -1,6 +1,6 @@
-import { usersService } from "../services/index.js";
-import { petsService } from "../services/index.js";
-import { generateUsers, generatePets } from "../utils/mocks.js";
+import { usersService } from '../services/index.js';
+import { petsService } from '../services/index.js';
+import { generateUsers, generatePets } from '../utils/mocks.js';
 
 const generateMockingData = async (req, res) => {
   const { users = 0, pets = 0 } = req.params;
@@ -28,11 +28,11 @@ const generateMockingData = async (req, res) => {
       pets: savedPets.length,
     };
 
-    res.status(200).json({ status: "success", payload: result });
+    res.status(200).json({ status: 'success', payload: result });
   } catch (error) {
     res
       .status(500)
-      .json({ status: "error", code: 500, message: error.message });
+      .json({ status: 'error', code: 500, message: error.message });
   }
 };
 
@@ -46,11 +46,11 @@ const generateMockingUsers = async (req, res) => {
       usersList.push(user);
     }
 
-    res.status(200).json({ status: "success", payload: usersList });
+    res.status(200).json({ status: 'success', payload: usersList });
   } catch (error) {
     res
       .status(500)
-      .json({ status: "error", code: 500, message: error.message });
+      .json({ status: 'error', code: 500, message: error.message });
   }
 };
 
@@ -64,11 +64,11 @@ const generateMockingPets = async (req, res) => {
       petsList.push(pet);
     }
 
-    res.status(200).json({ status: "success", payload: petsList });
+    res.status(200).json({ status: 'success', payload: petsList });
   } catch (error) {
     res
       .status(500)
-      .json({ status: "error", code: 500, message: error.message });
+      .json({ status: 'error', code: 500, message: error.message });
   }
 };
 

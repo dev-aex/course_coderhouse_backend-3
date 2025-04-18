@@ -1,5 +1,5 @@
-import { faker } from "@faker-js/faker";
-import { createHash } from "./index.js";
+import { faker } from '@faker-js/faker';
+import { createHash } from './index.js';
 
 const generatePets = () => {
   return {
@@ -17,8 +17,8 @@ const generateUsers = async () => {
     first_name: faker.person.firstName(),
     last_name: faker.person.lastName(),
     email: faker.internet.email(),
-    password: await createHash("coder123"),
-    role: faker.datatype.boolean() ? "user" : "admin",
+    password: await createHash('coder123'),
+    role: faker.datatype.boolean() ? 'user' : 'admin',
     pets: [],
   };
 };
