@@ -6,6 +6,9 @@ import prettierConfig from 'eslint-config-prettier';
 
 export default defineConfig([
   {
+    ignores: ['test/**'],
+  },
+  {
     files: ['**/*.{js,mjs,cjs}'],
     plugins: { js },
     extends: ['js/recommended'],

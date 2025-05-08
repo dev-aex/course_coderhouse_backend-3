@@ -14,11 +14,13 @@ router.post(
   validate(mockedDataSchema),
   mocksController.generateMockingData
 );
+
 router.get(
   '/mockingusers/:users',
   validate(mockedUsersSchema),
   mocksController.generateMockingUsers
 );
+
 router.get(
   '/mockingpets/:pets',
   validate(mockedPetsSchema),

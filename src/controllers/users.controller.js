@@ -26,10 +26,18 @@ const updateUser = async (req, res, next) => {
   const userId = req.params.uid;
   try {
     const user = await usersService.getUserById(userId);
+
     if (!user)
       return res.status(404).send({ status: 'error', error: 'User not found' });
-    const result = await usersService.update(userId, updateBody);
-    res.send({ status: 'success', message: 'User updated', payload: result });
+
+    await usersService.updateUserById(userId, updateBody);
+    const updatedUser = await usersService.getUserById(userId);
+
+    res.send({
+      status: 'success',
+      message: 'User updated',
+      payload: updatedUser,
+    });
   } catch (error) {
     next(error);
   }
@@ -38,7 +46,7 @@ const updateUser = async (req, res, next) => {
 const deleteUser = async (req, res, next) => {
   const userId = req.params.uid;
   try {
-    const result = await usersService.getUserById(userId);
+    const result = await usersService.deleteUserById(userId);
     res.send({ status: 'success', message: 'User deleted', payload: result });
   } catch (error) {
     next(error);

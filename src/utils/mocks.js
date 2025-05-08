@@ -3,7 +3,7 @@ import { createHash } from './index.js';
 
 const generatePets = () => {
   return {
-    name: faker.person.firstName(),
+    name: faker.animal.petName(),
     specie: faker.animal.type(),
     birthDate: faker.date.past(5),
     adopted: false,

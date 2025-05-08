@@ -25,8 +25,10 @@ const createAdoption = async (req, res) => {
   if (!user)
     return res.status(404).send({ status: 'error', error: 'user Not found' });
   const pet = await petsService.getBy({ _id: pid });
+
   if (!pet)
     return res.status(404).send({ status: 'error', error: 'Pet not found' });
+
   if (pet.adopted)
     return res
       .status(400)

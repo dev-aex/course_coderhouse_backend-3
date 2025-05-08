@@ -60,6 +60,8 @@ const generateMockingData = async (req, res, next) => {
 
 const generateMockingUsers = async (req, res, next) => {
   const { users } = req.params;
+  console.log(`users: `, users);
+
   try {
     const usersList = [];
 
