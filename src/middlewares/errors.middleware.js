@@ -1,7 +1,6 @@
 import EErrors from '../utils/errors/errorsEnums.js';
 
 export default (error, req, res, next) => {
-  console.error(error);
   switch (error.code) {
     case EErrors.BAD_REQUEST:
       res.status(400).send({ status: 'error', cause: error.cause });
@@ -37,4 +36,5 @@ export default (error, req, res, next) => {
       res.status(429).send({ status: 'error', cause: 'Unhandled error' });
       break;
   }
+  next();
 };

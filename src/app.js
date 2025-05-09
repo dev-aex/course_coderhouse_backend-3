@@ -9,7 +9,8 @@ import petsRouter from './routes/pets.router.js';
 import adoptionsRouter from './routes/adoption.router.js';
 import sessionsRouter from './routes/sessions.router.js';
 import mocksRouter from './routes/mocks.router.js';
-import errorsMiddleware from './middlewares/errorsMiddleware.js';
+import errorsMiddleware from './middlewares/errors.middleware.js';
+import addLogger from './middlewares/logger.middleware.js';
 
 const app = express();
 const port = env.port;
@@ -27,6 +28,7 @@ app.use('/api/mocks', mocksRouter);
 
 // Middlewares
 app.use(errorsMiddleware);
+app.use(addLogger);
 
 // Database connection
 ConnectMongoDB.getInstance();

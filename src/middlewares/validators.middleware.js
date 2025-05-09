@@ -8,7 +8,7 @@ export default (validator) => (req, res, next) => {
     if (!result.success) {
       CustomError.create({
         name: 'Validation Error',
-        cause: 'Bad requets', // Poner causa con los params o variables esperados
+        cause: 'Bad requets',
         message: result.error,
         code: EErrors.INVALID_TYPES_ERROR,
       });

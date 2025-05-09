@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import mocksController from '../controllers/mocks.controller.js';
-import validate from '../middlewares/validatorsMiddleware.js';
+import validate from '../middlewares/validators.middleware.js';
 import {
   mockedUsersSchema,
   mockedPetsSchema,
