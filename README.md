@@ -7,83 +7,101 @@ It provides comprehensive tools for managing adoptable pets, user profiles, and 
 
 # Getting Started
 
-```
-# Install dependencies
+#### Install dependencies
+
+```bash
 $ npm install
-
-# Run the application
-$ npm run start
 ```
 
-# Endpoints
+#### Run the application
 
-## Docs
+```bash
+$ npm run dev
+```
 
-/api/docs
+#### Server ups
 
-## Mocked Data
+```
+http://localhost:9090
+```
+
+## Endpoints
+
+### Docs
+
+`ROUTE` /api/docs
+
+### Mocked Data
+
+#### Users
+
+`GET` /api/mocks/mockingusers/:users
+
+#### Pets
+
+`GET` /api/mocks/mockingpets/:pets
+
+#### Users, pets and save it to DB
+
+`POST` /api/mocks/generatemockingdata/:users/:pets
 
 ### Users
 
-GET = /api/mocks/mockingusers/:users
+#### Get all users
+
+`GET` /api/users/
+
+#### Get one user by ID
+
+`GET` /api/users/:uid
+
+#### Update one user by ID
+
+`PUT` /api/users/:uid
+
+#### Delete one user by ID
+
+`DELETE` /api/users/:uid
 
 ### Pets
 
-GET = /api/mocks/mockingpets/:pets
+#### Get all pets
 
-### Users, pets and save it to DB
+`GET` /api/pets/
 
-POST = /api/mocks/generatemockingdata/:users/:pets
+#### Get one pet by ID
 
-## Users
+`GET` /api/pets/:pid
 
-### Get all users
+#### Update one pet by ID
 
-GET = /api/users/
+`PUT` /api/pets/:pid
 
-### Get one user by ID
+#### Delete one pet by ID
 
-GET = /api/users/:uid
+`DELETE` /api/pets/:pid
 
-### Update one user by ID
+### Adoptions
 
-PUT = /api/users/:uid
+#### Get all adoptions
 
-### Delete one user by ID
+`GET` /api/adoptions/
 
-DELETE = /api/users/:uid
+#### Get one adoption by ID
 
-## Pets
+`GET` /api/adoptions/:aid
 
-### Get all pets
+#### Update one adoption by ID
 
-GET = /api/pets/
+`POST` /api/adoptions/:aid
 
-### Get one pet by ID
+# Running Tests
 
-GET = /api/pets/:pid
+To run tests, run the following command
 
-### Update one pet by ID
-
-PUT = /api/pets/:pid
-
-### Delete one pet by ID
-
-DELETE = /api/pets/:pid
-
-## Adoptions
-
-### Get all adoptions
-
-GET = /api/adoptions/
-
-### Get one adoption by ID
-
-GET = /api/adoptions/:aid
-
-### Update one adoption by ID
-
-POST = /api/adoptions/:aid
+```bash
+  npm run test
+```
 
 # Docker
 
@@ -93,11 +111,15 @@ https://hub.docker.com/r/aaex/coderhouse_final_back-3
 
 ## Getting started
 
-```
-# Pull image
-docker pull aaex/coderhouse_final_back-3
+#### Pull image
 
-# Run image on container
+```bash
+docker pull aaex/coderhouse_final_back-3
+```
+
+#### Run image on container
+
+```bash
 docker run -d -p 8080:9090 -e PORT=9090 -e MONGODB_URL=[YOUR MONGO URI] aaex/coderhouse_final_back-3
 ```
 
