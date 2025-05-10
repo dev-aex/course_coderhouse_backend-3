@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 import env from './env.config.js';
 
-const MONGO_URI = env.mongoUrl;
+mongoose.set('strictQuery', false);
 
 class ConnectMongoDB {
   static #instance;
   static async getInstance() {
     if (!ConnectMongoDB.#instance) {
-      await mongoose.connect(MONGO_URI);
+      await mongoose.connect(env.mongoUrl);
       ConnectMongoDB.#instance = mongoose.connection;
       console.log('Database connected');
     } else {

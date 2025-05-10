@@ -27,6 +27,7 @@ const generateMockUsers = async (count) => {
 
     return usersList;
   } catch (e) {
+    console.error(e);
     throw CustomError.create({
       name: 'Mocked data generation Error',
       cause: generateUsersMockedDataErrorInfo(),
@@ -58,6 +59,7 @@ const generateMockPets = async (count) => {
 
     return petsList;
   } catch (e) {
+    console.error(e);
     throw CustomError.create({
       name: 'Mocked data generation Error',
       cause: generateUsersMockedDataErrorInfo(),
