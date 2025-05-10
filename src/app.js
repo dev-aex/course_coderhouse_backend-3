@@ -1,6 +1,8 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import compression from 'express-compression';
+import swaggerUIExpress from 'swagger-ui-express';
+import swaggerSpecs from './config/swagger.config.js';
 
 import env from './config/env.config.js';
 import ConnectMongoDB from './config/mongo.config.js';
@@ -19,12 +21,19 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(compression());
 
-// Routes
+// App routes
 app.use('/api/users', usersRouter);
 app.use('/api/pets', petsRouter);
 app.use('/api/adoptions', adoptionsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/mocks', mocksRouter);
+
+// Docs route
+app.use(
+  '/api/docs',
+  swaggerUIExpress.serve,
+  swaggerUIExpress.setup(swaggerSpecs)
+);
 
 // Middlewares
 app.use(errorsMiddleware);

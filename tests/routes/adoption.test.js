@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import supertest from 'supertest';
-import { random } from './utils.js';
+import { random } from '../utils.js';
 
 const adoptionBaseUrl = 'http://localhost:8080/api/adoptions';
 const usersBaseUrl = 'http://localhost:8080/api/users';

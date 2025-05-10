@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import supertest from 'supertest';
 import { faker } from '@faker-js/faker';
 
-import { random } from './utils.js';
+import { random } from '../utils.js';
 
 const baseUrl = 'http://localhost:8080/api/users/';
 
