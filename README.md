@@ -15,10 +15,6 @@ $ npm install
 $ npm run start
 ```
 
-# Docker image link
-
-https://hub.docker.com/r/aaex/coderhouse_final_back-3
-
 # Endpoints
 
 ## Docs
@@ -88,6 +84,27 @@ GET = /api/adoptions/:aid
 ### Update one adoption by ID
 
 POST = /api/adoptions/:aid
+
+# Docker
+
+## Image link
+
+https://hub.docker.com/r/aaex/coderhouse_final_back-3
+
+## Getting started
+
+```
+# Pull image
+docker pull aaex/coderhouse_final_back-3
+
+# Run image on container
+docker run -d -p 8080:9090 -e PORT=9090 -e MONGODB_URL=[YOUR MONGO URI] aaex/coderhouse_final_back-3
+```
+
+## Image ENVs
+
+- PORT: 9090
+- MONGODB_URL: link to your mongo DB.
 
 # Course information
 
