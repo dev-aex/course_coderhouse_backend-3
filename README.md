@@ -25,8 +25,6 @@ https://hub.docker.com/r/aaex/coderhouse_final_back-3
 
 /api/docs
 
----
-
 ## Mocked Data
 
 ### Users
@@ -40,8 +38,6 @@ GET = /api/mocks/mockingpets/:pets
 ### Users, pets and save it to DB
 
 POST = /api/mocks/generatemockingdata/:users/:pets
-
----
 
 ## Users
 
@@ -61,8 +57,6 @@ PUT = /api/users/:uid
 
 DELETE = /api/users/:uid
 
----
-
 ## Pets
 
 ### Get all pets
@@ -80,8 +74,6 @@ PUT = /api/pets/:pid
 ### Delete one pet by ID
 
 DELETE = /api/pets/:pid
-
----
 
 ## Adoptions
 
